@@ -1,8 +1,17 @@
 package com.example.quick_shop;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TempData {
+    public static Supermarket[] markets = {new Supermarket("Rami Levi"),new Supermarket("Shufersal")};
+
+    public static List<Category> categories = new ArrayList<Category>() {{
+       add(new Category("Diary"));
+    }};
+
+
+
 
     public static int[][] smallMarket =
             {
@@ -95,6 +104,6 @@ public class TempData {
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
                     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1}};
 
-    public static Supermarket[] markets = {new Supermarket("Rami Levi"),new Supermarket("Shufersal")};
+
 
 }

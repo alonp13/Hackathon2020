@@ -17,7 +17,7 @@ public class MarketActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_market);
 
-        marketScreen = new MarketScreen(this);
+        marketScreen = new MarketScreen(this,marketChose);
         marketScreen.setBackgroundColor(Color.WHITE);
         setContentView(marketScreen);
     }

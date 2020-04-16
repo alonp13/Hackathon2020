@@ -10,6 +10,7 @@ public class Supermarket implements Serializable {
     String mName;
     List<Category> mCategories;
     int[][] mBlueprint;
+    List<Shelf> shelves;
 
     public Supermarket(String name) {
         mName = name;
@@ -20,15 +21,23 @@ public class Supermarket implements Serializable {
         mName = name;
         mCategories = new ArrayList<Category>();
         mCategories.addAll(categories);
-        mBlueprint = blueprint;
+        setBlueprint(blueprint);
+
     }
 
     public void setBlueprint(int[][] blueprint) {
         mBlueprint = blueprint;
+        initData();
+    }
+
+    private void initData() {
+        shelves = new ArrayList<Shelf>();
     }
 
     @Override
     public String toString() {
         return mName;
     }
+
+
 }
