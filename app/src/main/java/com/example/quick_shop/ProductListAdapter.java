@@ -19,7 +19,7 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
     private Context mContext;
     int mResource;
 
-    public ProductListAdapter( Context context, int resource,  ArrayList<Product> objects) {
+    public ProductListAdapter( Context context, int resource,  List<Product> objects) {
         super(context, resource, objects);
         mContext=context;
         mResource = resource;
