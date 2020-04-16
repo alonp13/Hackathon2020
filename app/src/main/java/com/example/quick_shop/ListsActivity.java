@@ -8,24 +8,24 @@ import android.view.View;
 import android.widget.Button;
 
 public class ListsActivity extends AppCompatActivity {
-    //createListBtn
-    private  Button btn;
+
+    Button createListBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lists);
 
-        btn = (Button) findViewById(R.id.createListBtn);
-        btn.setOnClickListener(new View.OnClickListener() {
+        createListBtn = (Button) findViewById(R.id.createListBtn);
+        createListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openListsActivity();
+                openMarketActivity();
             }
         });
     }
+    private void openMarketActivity() {
 
-    private void openListsActivity() {
-        Intent intent = new Intent(this, CartActivity.class);
+        Intent intent = new Intent(this, MarketActivity.class);
         startActivity(intent);
     }
 }
