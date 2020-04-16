@@ -1,12 +1,16 @@
 package com.example.quick_shop;
 
+import androidx.annotation.NonNull;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Supermarket {
+public class Supermarket implements Serializable {
     String mName;
     List<Category> mCategories;
     int[][] mBlueprint;
+    List<Shelf> shelves;
 
     public Supermarket(String name) {
         mName = name;
@@ -17,11 +21,23 @@ public class Supermarket {
         mName = name;
         mCategories = new ArrayList<Category>();
         mCategories.addAll(categories);
-        mBlueprint = blueprint;
+        setBlueprint(blueprint);
+
     }
 
     public void setBlueprint(int[][] blueprint) {
         mBlueprint = blueprint;
+        initData();
     }
+
+    private void initData() {
+        shelves = new ArrayList<Shelf>();
+    }
+
+    @Override
+    public String toString() {
+        return mName;
+    }
+
 
 }

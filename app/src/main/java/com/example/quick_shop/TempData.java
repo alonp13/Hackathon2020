@@ -4,6 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TempData {
+    public static Supermarket[] markets = {new Supermarket("Rami Levi"),new Supermarket("Shufersal")};
+
+    public static List<Category> categories = new ArrayList<Category>() {{
+       add(new Category("Diary"));
+    }};
+
+
+
 
     public static List<Product> products = new ArrayList<Product>() {
         {
@@ -13,6 +21,12 @@ public class TempData {
             Product p4 = new Product("brad" , "brad");
             Product p5 = new Product("hamborger" , "meat");
             Product p6 = new Product("staek" , "meat");
+            Product p7 = new Product("milk" , "milk");
+            Product p8 = new Product("blue cheese" , "milk");
+            Product p9 = new Product("cheese" , "milk");
+            Product p10 = new Product("brad" , "brad");
+            Product p11 = new Product("hamborger" , "meat");
+            Product p12 = new Product("staek" , "meat");
 
             add(p1);
             add(p2);
@@ -20,6 +34,12 @@ public class TempData {
             add(p4);
             add(p5);
             add(p6);
+            add(p7);
+            add(p8);
+            add(p9);
+            add(p10);
+            add(p11);
+            add(p12);
         }
     };
 
@@ -113,6 +133,7 @@ public class TempData {
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
                     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1}};
+
 
 
 }

@@ -19,11 +19,11 @@ public class ListsActivity extends AppCompatActivity {
         createListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMarketActivity();
+                openChooseMarketActivity();
             }
         });
     }
-    private void openMarketActivity() {
+    private void openChooseMarketActivity() {
 
         Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
