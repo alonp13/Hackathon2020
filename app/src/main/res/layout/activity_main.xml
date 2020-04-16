@@ -44,6 +44,7 @@
         android:layout_marginRight="144dp"
         android:layout_marginBottom="175dp"
         android:background="@drawable/gradinat_background"
-        android:text="Lets Shop" />
+        android:text="@string/lets_shop"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
 </RelativeLayout>
