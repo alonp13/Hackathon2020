@@ -15,18 +15,18 @@ public class TempData {
 
     public static List<Product> products = new ArrayList<Product>() {
         {
-            Product p1 = new Product("milk" , "milk");
-            Product p2 = new Product("blue cheese" , "milk");
-            Product p3 = new Product("cheese" , "milk");
-            Product p4 = new Product("brad" , "brad");
-            Product p5 = new Product("hamborger" , "meat");
-            Product p6 = new Product("staek" , "meat");
-            Product p7 = new Product("milk" , "milk");
-            Product p8 = new Product("blue cheese" , "milk");
-            Product p9 = new Product("cheese" , "milk");
-            Product p10 = new Product("brad" , "brad");
-            Product p11 = new Product("hamborger" , "meat");
-            Product p12 = new Product("staek" , "meat");
+            Product p1 = new Product("milk" , "milk" , "חלבי");
+            Product p2 = new Product("blue cheese" , "milk" , "חלבי");
+            Product p3 = new Product("cheese" , "milk" , "חלבי");
+            Product p4 = new Product("brad" , "brad" , "חלבי");
+            Product p5 = new Product("hamborger" , "meat" , "חלבי");
+            Product p6 = new Product("staek" , "meat", "חלבי");
+            Product p7 = new Product("milk" , "milk", "חלבי");
+            Product p8 = new Product("blue cheese" , "milk", "חלבי");
+            Product p9 = new Product("cheese" , "milk", "חלבי");
+            Product p10 = new Product("brad" , "brad", "חלבי");
+            Product p11 = new Product("hamborger" , "meat", "חלבי");
+            Product p12 = new Product("staek" , "meat", "חלבי");
 
             add(p1);
             add(p2);
