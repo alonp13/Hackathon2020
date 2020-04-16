@@ -7,14 +7,18 @@ import android.os.Bundle;
 
 public class MarketActivity extends AppCompatActivity {
 
-    MarketScreen ms;
+    MarketScreen marketScreen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Supermarket marketChose = (Supermarket) getIntent().getExtras().get("com.example.quick_shop.MARKET_CHOSE");
+        setTitle(marketChose+"");
+
         setContentView(R.layout.activity_market);
 
-        ms = new MarketScreen(this);
-        ms.setBackgroundColor(Color.WHITE);
-        setContentView(ms);
+        marketScreen = new MarketScreen(this);
+        marketScreen.setBackgroundColor(Color.WHITE);
+        setContentView(marketScreen);
     }
 }
