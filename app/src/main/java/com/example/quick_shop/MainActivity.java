@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private void openListsActivity() {
         Intent intent = new Intent(this, ListsActivity.class);
         startActivity(intent);
+
     }
 
 }
