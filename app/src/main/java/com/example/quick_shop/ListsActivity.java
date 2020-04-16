@@ -25,7 +25,7 @@ public class ListsActivity extends AppCompatActivity {
     }
     private void openMarketActivity() {
 
-        Intent intent = new Intent(this, MarketActivity.class);
+        Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
     }
 }
