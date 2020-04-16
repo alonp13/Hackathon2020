@@ -14,16 +14,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn = (Button) findViewById(R.id.home_btn);
+        btn = (Button) findViewById(R.id.homeBtn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openSecondPage();
+                openListsActivity();
             }
         });
     }
 
-    private void openSecondPage() {
+    private void openListsActivity() {
         Intent intent = new Intent(this, ListsActivity.class);
         startActivity(intent);
     }
