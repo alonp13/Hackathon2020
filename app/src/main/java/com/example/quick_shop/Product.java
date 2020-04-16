@@ -7,6 +7,15 @@ public class Product {
     public Product(String name, String brand) {
         mName = name;
         mBrand = brand;
+
+    }
+
+    public void setmName(String mName) {
+        this.mName = mName;
+    }
+
+    public void setmBrand(String mBrand) {
+        this.mBrand = mBrand;
     }
 
     public String getName() {

@@ -13,6 +13,36 @@ public class TempData {
 
 
 
+    public static List<Product> products = new ArrayList<Product>() {
+        {
+            Product p1 = new Product("milk" , "milk");
+            Product p2 = new Product("blue cheese" , "milk");
+            Product p3 = new Product("cheese" , "milk");
+            Product p4 = new Product("brad" , "brad");
+            Product p5 = new Product("hamborger" , "meat");
+            Product p6 = new Product("staek" , "meat");
+            Product p7 = new Product("milk" , "milk");
+            Product p8 = new Product("blue cheese" , "milk");
+            Product p9 = new Product("cheese" , "milk");
+            Product p10 = new Product("brad" , "brad");
+            Product p11 = new Product("hamborger" , "meat");
+            Product p12 = new Product("staek" , "meat");
+
+            add(p1);
+            add(p2);
+            add(p3);
+            add(p4);
+            add(p5);
+            add(p6);
+            add(p7);
+            add(p8);
+            add(p9);
+            add(p10);
+            add(p11);
+            add(p12);
+        }
+    };
+
     public static int[][] smallMarket =
             {
              {0,0,0,0,0,0,0,0,0,0},
