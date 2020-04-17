@@ -31,16 +31,19 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
     public View getView(int position, View convertView,  ViewGroup parent) {
         String product = getItem(position).getName();
         String brand = getItem(position).getBrand();
-        Product p = new Product(product , brand);
+        String groceries = getItem(position).getMgroceries();
+        Product p = new Product(product , brand , groceries);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent , false);
 
         TextView tvName = (TextView) convertView.findViewById(R.id.textView1);
         TextView tvbrand = (TextView) convertView.findViewById(R.id.textView2);
+        TextView tvgroceries = (TextView) convertView.findViewById(R.id.textView3) ;
 
         tvName.setText(product);
         tvbrand.setText(brand);
+        tvgroceries.setText(groceries);
 
         return  convertView;
 

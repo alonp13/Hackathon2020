@@ -15,18 +15,18 @@ public class TempData {
 
     public static List<Product> products = new ArrayList<Product>() {
         {
-            Product p1 = new Product("milk" , "milk");
-            Product p2 = new Product("blue cheese" , "milk");
-            Product p3 = new Product("cheese" , "milk");
-            Product p4 = new Product("brad" , "brad");
-            Product p5 = new Product("hamborger" , "meat");
-            Product p6 = new Product("staek" , "meat");
-            Product p7 = new Product("milk" , "milk");
-            Product p8 = new Product("blue cheese" , "milk");
-            Product p9 = new Product("cheese" , "milk");
-            Product p10 = new Product("brad" , "brad");
-            Product p11 = new Product("hamborger" , "meat");
-            Product p12 = new Product("staek" , "meat");
+            Product p1 = new Product("חלב 3%" , "תנובה" , "חלבי");
+            Product p2 = new Product("גבינת סקי 5%" , "עמק" , "חלבי");
+            Product p3 = new Product("גבינה צהובה" , "עמק" , "חלבי");
+            Product p4 = new Product("לחם לבן" , "שופרסל" , "מאפים");
+            Product p5 = new Product("קבבים" , "טבעול" , "בשרי");
+            Product p6 = new Product("סטייק אנגוס" , "שופרסל", "בשרי");
+            Product p7 = new Product("במבה" , "אסם", "חטיפים");
+            Product p8 = new Product("ביסלי" , "אסם", "חטיפים");
+            Product p9 = new Product("קמח" , "רמי לוי", "אפייה");
+            Product p10 = new Product("תמצית וניל" , "רמי לוי", "אפייה");
+            Product p11 = new Product("מלח" , "שופרסל", "יסוד ותבלינים");
+            Product p12 = new Product("פלפל" , "שופרסל", "יסוד ותבלינים");
 
             add(p1);
             add(p2);
