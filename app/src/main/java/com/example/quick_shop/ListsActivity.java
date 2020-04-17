@@ -8,11 +8,12 @@ import android.view.View;
 import android.widget.Button;
 
 public class ListsActivity extends AppCompatActivity {
-
     Button createListBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Let's Shop");
         setContentView(R.layout.activity_lists);
 
         createListBtn = (Button) findViewById(R.id.createListBtn);

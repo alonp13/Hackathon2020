@@ -18,6 +18,7 @@ public class CartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Pick Items");
         setContentView(R.layout.activity_cart);
         Log.d(TAG, "onCreats: Started.");
         ListView listView = (ListView) findViewById(R.id.listview);

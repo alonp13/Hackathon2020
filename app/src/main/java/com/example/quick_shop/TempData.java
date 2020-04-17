@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TempData {
-    public static Supermarket[] markets = {new Supermarket("Rami Levi"),new Supermarket("Shufersal")};
+    public static Supermarket[] markets = {new Supermarket("רמי לוי שיווק השקמה - סניף אריאל"),new Supermarket("שופרסל דיל - אריאל")};
 
     public static List<Category> categories = new ArrayList<Category>() {{
        add(new Category("Diary"));
