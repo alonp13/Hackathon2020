@@ -22,13 +22,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
-    <Button
-        android:id="@+id/btnButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="683dp"
-        android:text="Finish" />
-        </RelativeLayout>
+        <Button
+            android:id="@+id/btnButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="683dp"
+            android:text="Finish" />
+    </RelativeLayout>
 </RelativeLayout>
