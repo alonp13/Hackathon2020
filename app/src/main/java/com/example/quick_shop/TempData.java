@@ -1,5 +1,7 @@
 package com.example.quick_shop;
 
+import android.graphics.Rect;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,6 +57,11 @@ public class TempData {
              {0,1,1,1,0,0,1,1,0,0},
              {0,0,0,0,0,0,0,0,0,0},
              {0,0,0,0,0,0,0,0,0,0}};
+
+    public static Shelf[] bigMarketShelves = {
+            new Shelf(new Rect(10,13,15,58),categories.get(0)),
+            new Shelf(new Rect(30,13,35,58),categories.get(0))
+    };
 
     public static int[][] bigMarket =
             {       {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},

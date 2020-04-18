@@ -11,16 +11,17 @@ import android.view.View;
 
 import androidx.constraintlayout.solver.widgets.Rectangle;
 
+
 public class MarketScreen extends View {
 
-    Paint paint;
-    Supermarket mSupermarket;
+    private Paint paint;
+    private Supermarket mSupermarket;
+    private int[][] bluePrint;
 
     private void init(Supermarket supermarket) {
         paint.setColor(Color.BLACK);
         mSupermarket = supermarket;
-
-
+        bluePrint = mSupermarket.getBlueprint();
     }
 
     public MarketScreen(Context context,Supermarket supermarket) {
@@ -43,7 +44,9 @@ public class MarketScreen extends View {
 
     @Override
     public void onDraw(Canvas canvas) {
-        Rect rect = new Rect(30,10,50,11);
-        canvas.drawRect(rect,paint);
+        for(int i = 0 ; i < TempData.bigMarketShelves.length ; i ++) {
+            Rect rect = TempData.bigMarketShelves[i].getLocation();
+            canvas.drawRect(rect,paint);
+        }
     }
 }

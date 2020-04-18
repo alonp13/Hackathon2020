@@ -40,4 +40,7 @@ public class Supermarket implements Serializable {
     }
 
 
+    public int[][] getBlueprint() {
+        return mBlueprint;
+    }
 }
