@@ -3,12 +3,12 @@
     <item>
         <shape>
             <gradient android:angle="225"
-                android:startColor="#243946"
-                android:endColor="#7085B2"
+                android:startColor="#02aab0"
+                android:endColor="#00cdac"
                 android:type="linear"/>
-            <stroke android:color="#0F0F0F" android:width="2dp"></stroke>
+            <stroke android:color="#FFFFFF" android:width="5dp"></stroke>
 
-            <corners android:radius="10dp"></corners>
+            <corners android:radius="20dp"></corners>
         </shape>
     </item>
 </selector>

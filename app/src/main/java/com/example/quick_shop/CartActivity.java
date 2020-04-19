@@ -3,6 +3,7 @@ package com.example.quick_shop;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,8 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-
-import java.util.ArrayList;
 
 public class CartActivity extends AppCompatActivity {
 
@@ -27,13 +26,15 @@ public class CartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
         Log.d(TAG, "onCreate: Started.");
         ListView listView = (ListView) findViewById(R.id.listview);
-        EditText thefilter = (EditText) findViewById(R.id.filtersearch);
+        EditText filter = (EditText) findViewById(R.id.filtersearch);
 
 
-        adapter = new ProductListAdapter(this, R.layout.adapter_veiw_layout, TempData.products);
+        adapter = new ProductListAdapter(this, R.layout.adapter_view_layout, TempData.products);
         listView.setAdapter(adapter);
 
         finishBtn = new Button(this);
+        finishBtn.setBackgroundResource(R.drawable.button_color);
+        finishBtn.setTextColor(Color.WHITE);
         finishBtn.setText("Finish");
 
         listView.addFooterView(finishBtn);
@@ -46,7 +47,7 @@ public class CartActivity extends AppCompatActivity {
             }
         });
 
-        thefilter.addTextChangedListener(new TextWatcher() {
+        filter.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
