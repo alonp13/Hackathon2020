@@ -3,20 +3,12 @@ package com.example.quick_shop;
 public class Product {
     private String mName;
     private String mBrand;
-    private String mGroceries;
+    private Category mCategory;
 
-    public Product(String name, String brand, String groceries) {
+    public Product(String name, String brand, Category category) {
         mName = name;
         mBrand = brand;
-        mGroceries =groceries;
-
-    }
-    public String getmGroceries() {
-        return mGroceries;
-    }
-
-    public void setGroceries(String mGroceries) {
-        this.mGroceries = mGroceries;
+        mCategory = category;
     }
 
     public void setName(String mName) {
@@ -33,6 +25,10 @@ public class Product {
 
     public String getBrand() {
         return  mBrand;
+    }
+
+    public Category getCategory() {
+        return mCategory;
     }
 
 }

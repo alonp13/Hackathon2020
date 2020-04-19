@@ -7,9 +7,20 @@ import java.util.List;
 
 public class TempData {
 
+    static final Category dairyCat = new Category("Dairy");
+    static final Category bakeryCat = new Category("Bakery");
+    static final Category meatCat = new Category("Meat");
+    static final Category snacksCat = new Category("Snacks");
+    static final Category spicesCat = new Category("Spices");
+
+
 
     public static List<Category> categories = new ArrayList<Category>() {{
-       add(new Category("Diary"));
+       add(dairyCat);
+       add(bakeryCat);
+       add(meatCat);
+       add(snacksCat);
+       add(spicesCat);
     }};
 
 
@@ -17,22 +28,20 @@ public class TempData {
 
     public static List<Product> products = new ArrayList<Product>() {
         {
-            Product p1 = new Product("חלב 3%" , "תנובה" , "חלבי");
-            Product p2 = new Product("גבינת סקי 5%" , "עמק" , "חלבי");
-            Product p3 = new Product("גבינה צהובה" , "עמק" , "חלבי");
-            Product p4 = new Product("לחם לבן" , "שופרסל" , "מאפים");
-            Product p5 = new Product("קבבים" , "טבעול" , "בשרי");
-            Product p6 = new Product("סטייק אנגוס" , "שופרסל", "בשרי");
-            Product p7 = new Product("במבה" , "אסם", "חטיפים");
-            Product p8 = new Product("ביסלי" , "אסם", "חטיפים");
-            Product p9 = new Product("קמח" , "רמי לוי", "אפייה");
-            Product p10 = new Product("תמצית וניל" , "רמי לוי", "אפייה");
-            Product p11 = new Product("מלח" , "שופרסל", "יסוד ותבלינים");
-            Product p12 = new Product("פלפל" , "שופרסל", "יסוד ותבלינים");
+            Product p1 = new Product("חלב 3%" , "תנובה" , dairyCat);
+            Product p2 = new Product("גבינת סקי 5%" , "עמק" , dairyCat);
+            Product p4 = new Product("לחם לבן" , "שופרסל" , bakeryCat);
+            Product p5 = new Product("קבבים" , "טבעול" , meatCat);
+            Product p6 = new Product("סטייק אנגוס" , "שופרסל", meatCat);
+            Product p7 = new Product("במבה" , "אסם", snacksCat);
+            Product p8 = new Product("ביסלי" , "אסם", snacksCat);
+            Product p9 = new Product("קמח" , "רמי לוי", bakeryCat);
+            Product p10 = new Product("תמצית וניל" , "רמי לוי", bakeryCat);
+            Product p11 = new Product("מלח" , "שופרסל", spicesCat);
+            Product p12 = new Product("פלפל" , "שופרסל", spicesCat);
 
             add(p1);
             add(p2);
-            add(p3);
             add(p4);
             add(p5);
             add(p6);
@@ -56,18 +65,21 @@ public class TempData {
              {0,1,1,1,0,0,1,1,0,0},
              {0,1,1,1,0,0,1,1,0,0},
              {0,0,0,0,0,0,0,0,0,0},
-             {0,0,0,0,0,0,0,0,0,0}};
+             {0,0,0,0,0,0,0,0,0,0}
+            };
 
 
     public static Shelf[] bigMarketShelves = {
-            new Shelf(new Rect(100,200,200,1300),categories.get(0)),
-            new Shelf(new Rect(350,200,450,1300),categories.get(0)),
-            new Shelf(new Rect(600,200,700,1300),categories.get(0)),
-            new Shelf(new Rect(850,200,950,1300),categories.get(0))
+        new Shelf(dairyCat,15,6),
+        new Shelf(meatCat,54,6),
+        new Shelf(bakeryCat,17,13),
+        new Shelf(snacksCat,38,13),
+        new Shelf(spicesCat,38,13)
     };
 
     public static int[][] bigMarket =
-            {       {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+            {
+                    {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
                     {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
                     {2,2,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
                     {2,2,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
@@ -142,10 +154,14 @@ public class TempData {
                     {2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
                     {2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2},
                     {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2},
-                    {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2}};
+                    {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2}
+            };
 
 
-    public static Supermarket[] markets = {new Supermarket("רמי לוי שיווק השקמה - סניף אריאל",bigMarket),new Supermarket("שופרסל דיל - אריאל",smallMarket)};
+    public static Supermarket[] markets = {
+            new Supermarket("רמי לוי שיווק השקמה - סניף אריאל",bigMarket),
+            new Supermarket("שופרסל דיל - אריאל",smallMarket)
+    };
 
 }
 

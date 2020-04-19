@@ -3,20 +3,16 @@ package com.example.quick_shop;
 import android.graphics.Rect;
 
 public class Shelf {
-    private Rect mLocation;
     private Category mCategory;
+    private int mX,mY;
 
-    public Shelf(Rect location, Category category) {
-        mLocation = location;
+
+    public Shelf(Category category,int x,int y) {
         mCategory = category;
+        mX = x;
+        mY = y;
     }
 
-    public Rect getLocation() {
-        return mLocation;
-    }
 
-    public Category getCategoty() {
-        return mCategory;
-    }
 
 }

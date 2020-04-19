@@ -5,10 +5,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
+import androidx.annotation.RequiresApi;
 import androidx.constraintlayout.solver.widgets.Rectangle;
 
 import java.util.ArrayList;
@@ -19,8 +21,8 @@ public class MarketScreen extends View {
     private Paint paint;
     private Supermarket mSupermarket;
     private int[][] bluePrint;
-    private int xScale;
-    private int yScale;
+    private float xScale;
+    private float yScale;
 
 
     private void init(Supermarket supermarket) {
@@ -60,43 +62,25 @@ public class MarketScreen extends View {
 
     @Override
     public void onDraw(Canvas canvas) {
-//        for(int i = 0 ; i < TempData.bigMarketShelves.length ; i ++) {
-//            Rect rect = TempData.bigMarketShelves[i].getLocation();
-//            canvas.drawRect(rect,paint);
-//        }
+        xScale = ((float)(this.getWidth())/(float)bluePrint[0].length);
+        yScale = ((float)(this.getHeight())/(float)bluePrint.length);
 
-        xScale = (int)((this.getWidth()+59)/bluePrint[0].length);
-        yScale = (int)((this.getHeight()+80)/bluePrint.length);
+        drawBlueprint(canvas);
+    }
 
-        Log.d("params","getWIdth: "+this.getWidth()+", getHeight: "+this.getHeight());
-        Log.d("ondraw","ondraw created");
-
-        ArrayList<Rect> rects = new ArrayList<Rect>();
-        ArrayList<Rect> bluRects = new ArrayList<Rect>();
-
+    private void drawBlueprint(Canvas canvas) {
         for(int i = 0 ; i<bluePrint.length;i++) {
             for (int j = 0 ; j < bluePrint[0].length;j++) {
                 if(bluePrint[i][j] == 1) {
-                    Rect rect = new Rect(j*xScale,i*yScale,(j+1)*xScale,(i+1)*yScale);
-                    rects.add(rect);
+                    paint.setColor(Color.CYAN);
+                    canvas.drawRect(j*xScale,i*yScale,(j+1)*xScale,(i+1)*yScale,paint);
                 }
+
                 if(bluePrint[i][j] == 2){
-                    Rect rect = new Rect(j*xScale,i*yScale,(j+1)*xScale,(i+1)*yScale);
-                    bluRects.add(rect);
+                    paint.setColor(Color.DKGRAY);
+                    canvas.drawRect(j*xScale,i*yScale,(j+1)*xScale,(i+1)*yScale,paint);
                 }
             }
         }
-        Log.d("rects",rects.toString());
-        Log.d("scales","x: "+xScale+" ,y: "+yScale);
-
-        paint.setColor(Color.DKGRAY);
-        for(Rect rect : bluRects) {
-            canvas.drawRect(rect,paint);
-        }
-        paint.setColor(Color.CYAN);
-        for(Rect rect : rects) {
-            canvas.drawRect(rect,paint);
-        }
-
     }
 }

@@ -29,19 +29,18 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
     public View getView(int position, View convertView,  ViewGroup parent) {
         String product = getItem(position).getName();
         String brand = getItem(position).getBrand();
-        String groceries = getItem(position).getmGroceries();
-        Product p = new Product(product , brand , groceries);
+        String category = getItem(position).getCategory().toString();
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent , false);
 
         TextView tvName = (TextView) convertView.findViewById(R.id.textView1);
-        TextView tvbrand = (TextView) convertView.findViewById(R.id.textView2);
-        TextView tvgroceries = (TextView) convertView.findViewById(R.id.textView3) ;
+        TextView tvBrand = (TextView) convertView.findViewById(R.id.textView2);
+        TextView tvCategory = (TextView) convertView.findViewById(R.id.textView3) ;
 
         tvName.setText(product);
-        tvbrand.setText(brand);
-        tvgroceries.setText(groceries);
+        tvBrand.setText(brand);
+        tvCategory.setText(category);
 
         return  convertView;
 
