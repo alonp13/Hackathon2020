@@ -3,27 +3,27 @@ package com.example.quick_shop;
 public class Product {
     private String mName;
     private String mBrand;
-    private String mgroceries;
+    private String mGroceries;
 
     public Product(String name, String brand, String groceries) {
         mName = name;
         mBrand = brand;
-        mgroceries =groceries;
+        mGroceries =groceries;
 
     }
-    public String getMgroceries() {
-        return mgroceries;
+    public String getmGroceries() {
+        return mGroceries;
     }
 
-    public void setMgroceries(String mgroceries) {
-        this.mgroceries = mgroceries;
+    public void setGroceries(String mGroceries) {
+        this.mGroceries = mGroceries;
     }
 
-    public void setmName(String mName) {
+    public void setName(String mName) {
         this.mName = mName;
     }
 
-    public void setmBrand(String mBrand) {
+    public void setBrand(String mBrand) {
         this.mBrand = mBrand;
     }
 

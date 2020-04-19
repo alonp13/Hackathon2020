@@ -8,9 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProductListAdapter extends ArrayAdapter<Product> {
@@ -31,7 +29,7 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
     public View getView(int position, View convertView,  ViewGroup parent) {
         String product = getItem(position).getName();
         String brand = getItem(position).getBrand();
-        String groceries = getItem(position).getMgroceries();
+        String groceries = getItem(position).getmGroceries();
         Product p = new Product(product , brand , groceries);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);

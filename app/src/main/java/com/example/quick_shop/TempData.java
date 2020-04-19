@@ -58,9 +58,12 @@ public class TempData {
              {0,0,0,0,0,0,0,0,0,0},
              {0,0,0,0,0,0,0,0,0,0}};
 
+
     public static Shelf[] bigMarketShelves = {
-            new Shelf(new Rect(10,13,15,58),categories.get(0)),
-            new Shelf(new Rect(30,13,35,58),categories.get(0))
+            new Shelf(new Rect(100,200,200,1300),categories.get(0)),
+            new Shelf(new Rect(350,200,450,1300),categories.get(0)),
+            new Shelf(new Rect(600,200,700,1300),categories.get(0)),
+            new Shelf(new Rect(850,200,950,1300),categories.get(0))
     };
 
     public static int[][] bigMarket =

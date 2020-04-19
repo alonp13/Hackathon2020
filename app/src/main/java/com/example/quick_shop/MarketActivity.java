@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 
 public class MarketActivity extends AppCompatActivity {
 
@@ -20,5 +22,14 @@ public class MarketActivity extends AppCompatActivity {
         marketScreen = new MarketScreen(this,marketChose);
         marketScreen.setBackgroundColor(Color.WHITE);
         setContentView(marketScreen);
+
+
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        super.onTouchEvent(event);
+        Log.d("point","x: "+event.getX()+", y: "+event.getY());
+        return  true;
     }
 }

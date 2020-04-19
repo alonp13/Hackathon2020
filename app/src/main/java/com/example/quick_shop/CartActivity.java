@@ -22,7 +22,7 @@ public class CartActivity extends AppCompatActivity {
         setTitle("Pick Items");
 
         setContentView(R.layout.activity_cart);
-        Log.d(TAG, "onCreats: Started.");
+        Log.d(TAG, "onCreate: Started.");
         ListView listView = (ListView) findViewById(R.id.listview);
 
         ProductListAdapter adapter = new ProductListAdapter(this, R.layout.adapter_veiw_layout, TempData.products);
