@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -15,7 +18,7 @@ public class CartActivity extends AppCompatActivity {
 
     private static final String TAG = "CartActivity";
     private Button finishBtn;
-
+    ProductListAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,8 +27,10 @@ public class CartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
         Log.d(TAG, "onCreate: Started.");
         ListView listView = (ListView) findViewById(R.id.listview);
+        EditText thefilter = (EditText) findViewById(R.id.filtersearch);
 
-        ProductListAdapter adapter = new ProductListAdapter(this, R.layout.adapter_veiw_layout, TempData.products);
+
+        adapter = new ProductListAdapter(this, R.layout.adapter_veiw_layout, TempData.products);
         listView.setAdapter(adapter);
 
         finishBtn = new Button(this);
@@ -40,6 +45,25 @@ public class CartActivity extends AppCompatActivity {
                 openChooseMarketActivity();
             }
         });
+
+        thefilter.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                (CartActivity.this).adapter.getFilter().filter(charSequence);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
 
     }
     private void openChooseMarketActivity() {
