@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TempData {
-    public static Supermarket[] markets = {new Supermarket("רמי לוי שיווק השקמה - סניף אריאל"),new Supermarket("שופרסל דיל - אריאל")};
+
 
     public static List<Category> categories = new ArrayList<Category>() {{
        add(new Category("Diary"));
@@ -145,5 +145,8 @@ public class TempData {
                     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1}};
 
 
+    public static Supermarket[] markets = {new Supermarket("רמי לוי שיווק השקמה - סניף אריאל",bigMarket),new Supermarket("שופרסל דיל - אריאל",smallMarket)};
 
 }
+
+

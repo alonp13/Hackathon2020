@@ -17,6 +17,12 @@ public class Supermarket implements Serializable {
         mCategories = new ArrayList<Category>();
     }
 
+    public Supermarket(String name,int[][] blueprint) {
+        mName = name;
+        mCategories = new ArrayList<Category>();
+        mBlueprint = blueprint;
+    }
+
     public Supermarket(String name,List<Category> categories, int[][] blueprint) {
         mName = name;
         mCategories = new ArrayList<Category>();

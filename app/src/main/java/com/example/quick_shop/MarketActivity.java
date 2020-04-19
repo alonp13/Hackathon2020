@@ -19,6 +19,8 @@ public class MarketActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_market);
 
+
+
         marketScreen = new MarketScreen(this,marketChose);
         marketScreen.setBackgroundColor(Color.WHITE);
         setContentView(marketScreen);
@@ -29,7 +31,7 @@ public class MarketActivity extends AppCompatActivity {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         super.onTouchEvent(event);
-        Log.d("point","x: "+event.getX()+", y: "+event.getY());
-        return  true;
+        Log.i("point","x: "+event.getX()+", y: "+event.getY());
+        return true;
     }
 }

@@ -11,23 +11,39 @@ import android.view.View;
 
 import androidx.constraintlayout.solver.widgets.Rectangle;
 
+import java.util.ArrayList;
+
 
 public class MarketScreen extends View {
 
     private Paint paint;
     private Supermarket mSupermarket;
     private int[][] bluePrint;
+    private int xScale;
+    private int yScale;
+
 
     private void init(Supermarket supermarket) {
         paint.setColor(Color.BLACK);
         mSupermarket = supermarket;
         bluePrint = mSupermarket.getBlueprint();
+
+        xScale = (int)(this.getWidth()/bluePrint.length);
+        yScale = (int)(this.getHeight()/bluePrint[0].length);
+
     }
+
 
     public MarketScreen(Context context,Supermarket supermarket) {
         super(context);
         paint = new Paint();
-        init(supermarket);
+        mSupermarket = supermarket;
+        bluePrint = mSupermarket.getBlueprint();
+
+
+
+        Log.d("init","init created");
+        // init(supermarket);
     }
 
     public MarketScreen(Context context, AttributeSet attrs,Supermarket supermarket) {
@@ -44,9 +60,30 @@ public class MarketScreen extends View {
 
     @Override
     public void onDraw(Canvas canvas) {
-        for(int i = 0 ; i < TempData.bigMarketShelves.length ; i ++) {
-            Rect rect = TempData.bigMarketShelves[i].getLocation();
+//        for(int i = 0 ; i < TempData.bigMarketShelves.length ; i ++) {
+//            Rect rect = TempData.bigMarketShelves[i].getLocation();
+//            canvas.drawRect(rect,paint);
+//        }
+
+        xScale = (int)((this.getWidth()+100)/bluePrint[0].length);
+        yScale = (int)((this.getHeight()+200)/bluePrint.length);
+        Log.d("params","getWIdth: "+this.getWidth()+", getHeight: "+this.getHeight());
+        Log.d("ondraw","ondraw created");
+        ArrayList<Rect> rects = new ArrayList<Rect>();
+        for(int i = 0 ; i<bluePrint.length;i++) {
+            for (int j = 0 ; j < bluePrint[0].length;j++) {
+                if(bluePrint[i][j] == 1) {
+                    Rect rect = new Rect(j*xScale,i*yScale,(j+1)*xScale,(i+1)*yScale);
+                    rects.add(rect);
+                }
+            }
+        }
+        Log.d("rects",rects.toString());
+        Log.d("scales","x: "+xScale+" ,y: "+yScale);
+
+        for(Rect rect : rects) {
             canvas.drawRect(rect,paint);
         }
+
     }
 }
