@@ -65,22 +65,35 @@ public class MarketScreen extends View {
 //            canvas.drawRect(rect,paint);
 //        }
 
-        xScale = (int)((this.getWidth()+100)/bluePrint[0].length);
-        yScale = (int)((this.getHeight()+200)/bluePrint.length);
+        xScale = (int)((this.getWidth()+59)/bluePrint[0].length);
+        yScale = (int)((this.getHeight()+80)/bluePrint.length);
+
         Log.d("params","getWIdth: "+this.getWidth()+", getHeight: "+this.getHeight());
         Log.d("ondraw","ondraw created");
+
         ArrayList<Rect> rects = new ArrayList<Rect>();
+        ArrayList<Rect> bluRects = new ArrayList<Rect>();
+
         for(int i = 0 ; i<bluePrint.length;i++) {
             for (int j = 0 ; j < bluePrint[0].length;j++) {
                 if(bluePrint[i][j] == 1) {
                     Rect rect = new Rect(j*xScale,i*yScale,(j+1)*xScale,(i+1)*yScale);
                     rects.add(rect);
                 }
+                if(bluePrint[i][j] == 2){
+                    Rect rect = new Rect(j*xScale,i*yScale,(j+1)*xScale,(i+1)*yScale);
+                    bluRects.add(rect);
+                }
             }
         }
         Log.d("rects",rects.toString());
         Log.d("scales","x: "+xScale+" ,y: "+yScale);
 
+        paint.setColor(Color.DKGRAY);
+        for(Rect rect : bluRects) {
+            canvas.drawRect(rect,paint);
+        }
+        paint.setColor(Color.CYAN);
         for(Rect rect : rects) {
             canvas.drawRect(rect,paint);
         }
