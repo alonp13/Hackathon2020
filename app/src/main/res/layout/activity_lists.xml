@@ -45,10 +45,10 @@
         android:layout_height="272dp"
         app:layout_constraintBottom_toTopOf="@+id/myListsBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601"
-        app:srcCompat="@drawable/icic" />
+        app:layout_constraintVertical_bias="0.575"
+        app:srcCompat="@drawable/logo1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
