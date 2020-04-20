@@ -18,7 +18,7 @@ public class MarketActivity extends AppCompatActivity {
     PathView pathView;
 
     TextView itemDetailsTextView;
-    Button tookBtn;
+    Button nextBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class MarketActivity extends AppCompatActivity {
         addContentView(pathView,marketView.getLayoutParams());
 
         itemDetailsTextView = (TextView) findViewById(R.id.itemDetailsTextView);
-        tookBtn = (Button) findViewById(R.id.tookBtn);
+        nextBtn = (Button) findViewById(R.id.nextBtn);
 
 
 

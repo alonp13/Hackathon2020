@@ -21,20 +21,45 @@ tools:context=".MarketActivity">
 
         <TextView
             android:id="@+id/itemDetailsTextView"
-            android:layout_width="297dp"
-            android:layout_height="89dp"
-            android:text="Item detail..." />
+            android:layout_width="303dp"
+            android:layout_height="64dp"
+            android:text="קמח | רמי לוי"
+            android:textSize="35dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/tookBtn"
-            android:layout_width="103dp"
-            android:layout_height="65dp"
-            android:text="Took"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/nextBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="הבא"
+            app:layout_constraintEnd_toStartOf="@+id/itemDetailsTextView"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/listBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="לרשימה"
+            app:layout_constraintEnd_toStartOf="@+id/itemDetailsTextView"
+            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nextBtn" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="83dp"
+            android:layout_height="50dp"
+            android:text="2/3"
+            android:textSize="25dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/itemDetailsTextView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.74" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemDetailsTextView"
+            tools:ignore="MissingConstraints" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
