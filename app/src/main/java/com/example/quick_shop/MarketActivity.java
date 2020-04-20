@@ -1,15 +1,19 @@
 package com.example.quick_shop;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.widget.FrameLayout;
 
 public class MarketActivity extends AppCompatActivity {
 
-    MarketScreen marketScreen;
+    MarketView marketView;
+    PathView pathView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,12 +23,12 @@ public class MarketActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_market);
 
+        marketView = new MarketView(this,marketChose);
+        marketView.setBackgroundResource(R.drawable.gradinat_background);
+        setContentView(marketView);
 
-
-        marketScreen = new MarketScreen(this,marketChose);
-        marketScreen.setBackgroundColor(Color.WHITE);
-        setContentView(marketScreen);
-
+        pathView = new PathView(this);
+        addContentView(pathView,marketView.getLayoutParams());
 
     }
 
