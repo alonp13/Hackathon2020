@@ -5,22 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private  Button btn;
+
+    private Button homeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-       // setTitle("QUICK-SHOP");
         setContentView(R.layout.activity_main);
 
-        btn = (Button) findViewById(R.id.homeBtn);
-        btn.setOnClickListener(new View.OnClickListener() {
+        homeBtn = (Button) findViewById(R.id.homeBtn);
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 openListsActivity();
@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private void openListsActivity() {
         Intent intent = new Intent(this, ListsActivity.class);
         startActivity(intent);
-
-
     }
 
 }

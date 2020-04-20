@@ -9,13 +9,13 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 public class ListsActivity extends AppCompatActivity {
-    Button createListBtn;
+
+    private Button createListBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setTitle("Let's Shop");
         setContentView(R.layout.activity_lists);
 
         createListBtn = (Button) findViewById(R.id.createListBtn);
@@ -26,8 +26,8 @@ public class ListsActivity extends AppCompatActivity {
             }
         });
     }
-    private void openChooseMarketActivity() {
 
+    private void openChooseMarketActivity() {
         Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
     }

@@ -6,6 +6,7 @@ import androidx.annotation.Nullable;
 import java.io.Serializable;
 
 public class Product implements Serializable {
+
     private String mName;
     private String mBrand;
     private Category mCategory;
@@ -14,14 +15,6 @@ public class Product implements Serializable {
         mName = name;
         mBrand = brand;
         mCategory = category;
-    }
-
-    public void setName(String mName) {
-        this.mName = mName;
-    }
-
-    public void setBrand(String mBrand) {
-        this.mBrand = mBrand;
     }
 
     public String getName() {

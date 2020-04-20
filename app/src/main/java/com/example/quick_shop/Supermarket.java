@@ -1,19 +1,12 @@
 package com.example.quick_shop;
 
-import androidx.annotation.NonNull;
-
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Supermarket implements Serializable {
-    String mName;
-    int[][] mBlueprint;
-    List<Shelf> mShelves;
-
-    public Supermarket(String name) {
-        mName = name;
-    }
+    private String mName;
+    private int[][] mBlueprint;
+    private List<Shelf> mShelves;
 
     public Supermarket(String name,int[][] blueprint) {
         mName = name;
@@ -32,7 +25,6 @@ public class Supermarket implements Serializable {
     public String toString() {
         return mName;
     }
-
 
     public int[][] getBlueprint() {
         return mBlueprint;

@@ -1,10 +1,12 @@
 package com.example.quick_shop;
 
-import android.graphics.Rect;
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class that holds the data.
+ * Should be a database
+ */
 public class TempData {
 
     static final Category dairyCat = new Category("Dairy");
@@ -14,8 +16,6 @@ public class TempData {
     static final Category spicesCat = new Category("Spices");
     static final Category fruitsCat = new Category("Fruits");
 
-
-
     public static List<Category> categories = new ArrayList<Category>() {{
        add(dairyCat);
        add(bakeryCat);
@@ -24,9 +24,6 @@ public class TempData {
        add(spicesCat);
        add(fruitsCat);
     }};
-
-
-
 
     public static List<Product> products = new ArrayList<Product>() {
         {
@@ -73,7 +70,6 @@ public class TempData {
              {0,0,0,0,0,0,0,0,0,0},
              {0,0,0,0,0,0,0,0,0,0}
             };
-
 
     public static Shelf[] bigMarketShelves = {
             new Shelf(dairyCat,26,6),
@@ -164,12 +160,10 @@ public class TempData {
                     {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2}
             };
 
-
     public static Supermarket[] markets = {
             new Supermarket("רמי לוי שיווק השקמה - סניף אריאל",bigMarket),
             new Supermarket("שופרסל דיל - אריאל",smallMarket)
     };
-
 }
 
 

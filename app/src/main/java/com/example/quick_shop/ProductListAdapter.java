@@ -1,14 +1,12 @@
 package com.example.quick_shop;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,20 +17,20 @@ import java.util.List;
 public class ProductListAdapter extends ArrayAdapter<Product> {
 
     private static final String TAG = "ProductListAdapter";
+
     private Context mContext;
-    int mResource;
+    private int mResource;
 
-    CheckBox checkBox;
-    TextView tvName;
-    TextView tvBrand;
-    TextView tvCategory;
-    ArrayList<Product> selectedProducts = new ArrayList<Product>();
+    private CheckBox checkBox;
+    private TextView tvName;
+    private TextView tvBrand;
+    private TextView tvCategory;
+    private ArrayList<Product> productsSelected = new ArrayList<Product>();
 
-    public ProductListAdapter( Context context, int resource,  List<Product> objects) {
+    public ProductListAdapter(Context context, int resource,  List<Product> objects) {
         super(context, resource, objects);
         mContext=context;
         mResource = resource;
-
     }
 
     @NonNull
@@ -60,22 +58,20 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
                 if(isChecked) {
-                    if(!selectedProducts.contains(currProduct)) {
-                        selectedProducts.add(currProduct);
+                    if(!productsSelected.contains(currProduct)) {
+                        productsSelected.add(currProduct);
                     }
                 } else {
-                    selectedProducts.remove(currProduct);
+                    productsSelected.remove(currProduct);
                 }
             }
         });
-
-
         return  convertView;
-
     }
 
-    public ArrayList<Product> getSelectedProducts(){
-        return selectedProducts;
+    public ArrayList<Product> getProductsSelected(){
+        return productsSelected;
     }
 }
