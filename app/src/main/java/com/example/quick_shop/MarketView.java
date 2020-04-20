@@ -34,14 +34,20 @@ public class MarketView extends View {
 
     public MarketView(Context context) {
         super(context);
+        paint = new Paint();
+
     }
 
     public MarketView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        paint = new Paint();
+
     }
 
     public MarketView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        paint = new Paint();
+
     }
 
     public MarketView(Context context, Supermarket supermarket) {
@@ -65,10 +71,25 @@ public class MarketView extends View {
 
     @Override
     public void onDraw(Canvas canvas) {
-        xScale = ((float)(this.getWidth())/(float)bluePrint[0].length);
-        yScale = ((float)(this.getHeight())/(float)bluePrint.length);
+        super.onDraw(canvas);
+//        xScale = ((float)(canvas.getWidth())/(float)bluePrint[0].length);
+//        yScale = ((float)(canvas.getHeight())/(float)bluePrint.length);
 
+
+  //      drawBlueprint(canvas);
+    }
+
+    @Override
+    public void draw(Canvas canvas) {
+        super.draw(canvas);
+        xScale = ((float)(canvas.getWidth())/(float)bluePrint[0].length);
+        yScale = ((float)(canvas.getHeight())/(float)bluePrint.length);
         drawBlueprint(canvas);
+    }
+
+    public void setSupermarket(Supermarket supermarket) {
+        mSupermarket = supermarket;
+        bluePrint = mSupermarket.getBlueprint();
     }
 
     private void drawBlueprint(Canvas canvas) {

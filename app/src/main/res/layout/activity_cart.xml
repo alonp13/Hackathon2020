@@ -12,9 +12,9 @@
         android:id="@+id/filtersearch"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:text="Choose Products..."
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#CC7C7A72"
-        tools:text="Choose Products..." />
+        android:textColor="#E655544F" />
 
     <ListView
         android:id="@id/listview"

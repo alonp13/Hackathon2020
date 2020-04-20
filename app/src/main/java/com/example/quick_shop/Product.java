@@ -3,7 +3,9 @@ package com.example.quick_shop;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private String mName;
     private String mBrand;
     private Category mCategory;

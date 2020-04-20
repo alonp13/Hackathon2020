@@ -17,8 +17,12 @@ import android.widget.ListView;
 public class CartActivity extends AppCompatActivity {
 
     private static final String TAG = "CartActivity";
+
     private Button finishBtn;
-    ProductListAdapter adapter;
+    private EditText filter;
+    private boolean filterClicked;
+
+    private ProductListAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +32,20 @@ public class CartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
         Log.d(TAG, "onCreate: Started.");
         ListView listView = (ListView) findViewById(R.id.listview);
-        EditText filter = (EditText) findViewById(R.id.filtersearch);
+        filter = (EditText) findViewById(R.id.filtersearch);
 
+        filterClicked = false;
+        filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!filterClicked) {
+                    filter.setText("");
+                    filter.setTextColor(Color.BLACK);
+                    filter.setTextSize(20);
+                    filterClicked = true;
+                }
+            }
+        });
 
         adapter = new ProductListAdapter(this, R.layout.adapter_view_layout, TempData.products);
         listView.setAdapter(adapter);

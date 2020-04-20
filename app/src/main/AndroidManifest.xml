@@ -13,8 +13,7 @@
         <activity android:name=".ChooseMarketActivity" />
         <activity android:name=".CartActivity" />
         <activity android:name=".ListsActivity" />
-        <activity android:name=".MainActivity" >
-
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
