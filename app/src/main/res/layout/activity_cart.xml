@@ -9,9 +9,12 @@
     tools:context=".CartActivity">
 
     <EditText
+        android:id="@+id/filtersearch"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/filtersearch"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#CC7C7A72"
+        tools:text="Choose Products..." />
 
     <ListView
         android:id="@id/listview"

@@ -32,17 +32,23 @@ public class MarketView extends View {
 
     }
 
+    public MarketView(Context context) {
+        super(context);
+    }
+
+    public MarketView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public MarketView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+    }
 
     public MarketView(Context context, Supermarket supermarket) {
         super(context);
         paint = new Paint();
         mSupermarket = supermarket;
         bluePrint = mSupermarket.getBlueprint();
-
-
-
-        Log.d("init","init created");
-        // init(supermarket);
     }
 
     public MarketView(Context context, AttributeSet attrs, Supermarket supermarket) {

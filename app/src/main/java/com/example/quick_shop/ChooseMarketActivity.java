@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -18,6 +19,7 @@ public class ChooseMarketActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setTitle("Choose Supermarket");
         setContentView(R.layout.activity_choose_market);
 
@@ -30,7 +32,13 @@ public class ChooseMarketActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ChooseMarketActivity.this,MarketActivity.class);
-                intent.putExtra("com.example.quick_shop.MARKET_CHOSE", getMarkets().get(position));
+
+                Supermarket marketChose = getMarkets().get(position); // Should be from Database
+                ArrayList<Product> productsSelected = (ArrayList<Product>) getIntent().getExtras().get("com.example.quick_shop.PRODUCTS_SELECTED");
+
+                intent.putExtra("com.example.quick_shop.MARKET_CHOSE", marketChose);
+                intent.putExtra("com.example.quick_shop.PRODUCTS_SELECTED", productsSelected);
+
                 startActivity(intent);
             }
         });

@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 public class MarketActivity extends AppCompatActivity {
@@ -17,6 +18,8 @@ public class MarketActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
         Supermarket marketChose = (Supermarket) getIntent().getExtras().get("com.example.quick_shop.MARKET_CHOSE");
         setTitle(marketChose+"");
@@ -27,7 +30,7 @@ public class MarketActivity extends AppCompatActivity {
         marketView.setBackgroundResource(R.drawable.gradinat_background);
         setContentView(marketView);
 
-        pathView = new PathView(this);
+        pathView = new PathView(this,marketChose);
         addContentView(pathView,marketView.getLayoutParams());
 
     }

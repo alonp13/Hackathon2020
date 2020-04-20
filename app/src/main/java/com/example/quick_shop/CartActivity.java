@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -21,6 +22,7 @@ public class CartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setTitle("Pick Items");
 
         setContentView(R.layout.activity_cart);
@@ -31,6 +33,7 @@ public class CartActivity extends AppCompatActivity {
 
         adapter = new ProductListAdapter(this, R.layout.adapter_view_layout, TempData.products);
         listView.setAdapter(adapter);
+
 
         finishBtn = new Button(this);
         finishBtn.setBackgroundResource(R.drawable.button_color);
@@ -43,6 +46,7 @@ public class CartActivity extends AppCompatActivity {
         finishBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("products",adapter.getSelectedProducts()+"");
                 openChooseMarketActivity();
             }
         });
@@ -65,10 +69,11 @@ public class CartActivity extends AppCompatActivity {
         });
 
 
-
     }
+
     private void openChooseMarketActivity() {
         Intent intent = new Intent(this, ChooseMarketActivity.class);
+        intent.putExtra("com.example.quick_shop.PRODUCTS_SELECTED",adapter.getSelectedProducts());
         startActivity(intent);
     }
 }

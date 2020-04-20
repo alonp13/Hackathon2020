@@ -10,10 +10,14 @@ import android.view.View;
 public class PathView extends View {
 
     Paint paint;
+    Supermarket mSupermarket;
+    int[][] mBlueprint;
 
-    public PathView(Context context) {
+    public PathView(Context context, Supermarket supermarket) {
         super(context);
         paint = new Paint();
+        mSupermarket = supermarket;
+        mBlueprint = supermarket.getBlueprint();
 
     }
 
